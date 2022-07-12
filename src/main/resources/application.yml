@@ -1,0 +1,26 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    url: jdbc:postgresql://localhost:5432/db_tilaka
+    username: postgres
+    password: postgres
+    initialization-mode: always
+  main:
+      allow-circular-references: true
+  sql:
+    init:
+      mode: always
+server:
+  port : 8081
+security:
+  oauth2:
+    resource:
+      filter-order: 3
+  signing-key: RK+Lh9x5eJPo5CAZ3/ANBE0sTK0ZsDGMak2m1g7

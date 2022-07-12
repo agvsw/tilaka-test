@@ -1,0 +1,529 @@
+{
+	"info": {
+		"_postman_id": "f3f09ca5-802e-4226-aa11-4b0583299c58",
+		"name": "Tilaka test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6078268"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userName\": \"yuhu\",\n  \"password\": \"1234\",\n  \"email\": \"aguss@maill.com\",\n  \"mobile\": \"9856683254\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userName\": \"agus\",\n  \"password\": \"1234\",\n  \"email\": \"agus@maill.com\",\n  \"mobile\": \"9856683254\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Jul 2022 11:52:40 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseCode\": 20,\n    \"responseMessage\": \"success\",\n    \"data\": {\n        \"id\": 2,\n        \"userName\": \"agus\",\n        \"password\": \"$2a$10$N9FQu522HQwIFzA6U09jN.zSg0aLTpKfXMg6U0Q8oH7DdhX5F6NlO\",\n        \"email\": \"agus@maill.com\",\n        \"mobile\": \"9856683254\",\n        \"roles\": [\n            {\n                \"id\": 1,\n                \"roleName\": \"ADMIN\",\n                \"description\": \"Admin User - Has permission to perform admin tasks\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic bW9iaWxlOndpZHlh",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8081/oauth/token?username=agus&password=1234&grant_type=password",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "agus"
+						},
+						{
+							"key": "password",
+							"value": "1234"
+						},
+						{
+							"key": "grant_type",
+							"value": "password"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic bW9iaWxlOndpZHlh",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8081/oauth/token?username=agus&password=1234&grant_type=password",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"oauth",
+								"token"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "agus"
+								},
+								{
+									"key": "password",
+									"value": "1234"
+								},
+								{
+									"key": "grant_type",
+									"value": "password"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-store"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Jul 2022 11:56:30 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTc2MjcxODEsInVzZXJfbmFtZSI6ImFndXMiLCJhdXRob3JpdGllcyI6WyJBRE1JTiJdLCJqdGkiOiJjZGE4ZjRjZi02YjE0LTRkMWUtOGNkNi1iYWI3Y2U3MTYzYmMiLCJjbGllbnRfaWQiOiJtb2JpbGUiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXX0.aDOKyarjv_7qSPyN6Y_SPeYC3YhVfITud2cDEk8gQIU\",\n    \"token_type\": \"bearer\",\n    \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZ3VzIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImF0aSI6ImNkYThmNGNmLTZiMTQtNGQxZS04Y2Q2LWJhYjdjZTcxNjNiYyIsImV4cCI6MTY1NzYyODY4MSwiYXV0aG9yaXRpZXMiOlsiQURNSU4iXSwianRpIjoiMTk4MTJjNWEtYTVjMS00MDk1LWEwMjItMjU1ZDQ3OTJkZjFiIiwiY2xpZW50X2lkIjoibW9iaWxlIn0.yQU6IC3geP40FzEsyQSFTJqN8OEggy-DjjubICQEvfo\",\n    \"expires_in\": 190,\n    \"scope\": \"read write\",\n    \"jti\": \"cda8f4cf-6b14-4d1e-8cd6-bab7ce7163bc\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get user by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTc2Mjc1OTAsInVzZXJfbmFtZSI6ImFndXMiLCJhdXRob3JpdGllcyI6WyJBRE1JTiJdLCJqdGkiOiIyNDhkNWM4Mi0xYjEwLTQwZTQtODAwMC05OWQ1ODE4ODNhZDEiLCJjbGllbnRfaWQiOiJtb2JpbGUiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXX0.GGyBg8MZN0zTgVPrgR7k5KXIqH5k7UYTiHhW7l7Lrfw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/user/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get user by id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/user/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Jul 2022 11:58:13 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseCode\": 20,\n    \"responseMessage\": \"success\",\n    \"data\": {\n        \"id\": 1,\n        \"userName\": \"admin\",\n        \"password\": \"$2a$10$gUiNoh/E3yOGVhDiU6D4LeEg7sX4HyPyuyrrNR4AMMPaEKqHJnDCy\",\n        \"email\": \"admin@maill.com\",\n        \"mobile\": \"9856683254\",\n        \"roles\": [\n            {\n                \"id\": 1,\n                \"roleName\": \"ADMIN\",\n                \"description\": \"Admin User - Has permission to perform admin tasks\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTc2MjgwNDksInVzZXJfbmFtZSI6ImFndXMiLCJhdXRob3JpdGllcyI6WyJBRE1JTiJdLCJqdGkiOiI4MWQ0OTUxYy03OWUwLTQ2MWYtOWJjMC05NDVlZjE2MjQ3NzMiLCJjbGllbnRfaWQiOiJtb2JpbGUiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXX0.h-jJDKGTefAJgFTnaNxCotJdeX4VA5MFm4gsG6_jufI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/user/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "delete user",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/user/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Jul 2022 12:09:18 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseCode\": 20,\n    \"responseMessage\": \"success\",\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "update user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTc2MjgwNDksInVzZXJfbmFtZSI6ImFndXMiLCJhdXRob3JpdGllcyI6WyJBRE1JTiJdLCJqdGkiOiI4MWQ0OTUxYy03OWUwLTQ2MWYtOWJjMC05NDVlZjE2MjQ3NzMiLCJjbGllbnRfaWQiOiJtb2JpbGUiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXX0.h-jJDKGTefAJgFTnaNxCotJdeX4VA5MFm4gsG6_jufI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 2,\n  \"userName\": \"testupdate\",\n  \"password\": \"1234\",\n  \"email\": \"aguss@maill.com\",\n  \"mobile\": \"9856683254\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/user",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "update user",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 2,\n  \"userName\": \"testupdate\",\n  \"password\": \"1234\",\n  \"email\": \"aguss@maill.com\",\n  \"mobile\": \"9856683254\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Jul 2022 12:13:12 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseCode\": 20,\n    \"responseMessage\": \"success\",\n    \"data\": {\n        \"id\": 2,\n        \"userName\": \"testupdate\",\n        \"password\": \"$2a$10$3/0VlXNa7B74925TsG.s5ut7pJJUdpFQgnChUZ63sWxRaYRUHxIU.\",\n        \"email\": \"aguss@maill.com\",\n        \"mobile\": \"9856683254\",\n        \"roles\": [\n            {\n                \"id\": 1,\n                \"roleName\": \"ADMIN\",\n                \"description\": \"Admin User - Has permission to perform admin tasks\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		}
+	]
+}
